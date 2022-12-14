@@ -2,11 +2,13 @@ import { useState } from "react";
 
 export default function Search(props) {
   const [filter, setFilter] = useState("");
+
   const handleFilter = (e) => {
     if (e.key == "Enter") {
       props.handleFilter(filter);
     }
   };
+
   return (
     <div className="relative mx-20">
       <input

@@ -12,6 +12,7 @@ export default function Header() {
           src="./assets/cart.png"
           width="50px"
           height="50px"
+          alt="cart placeholder"
         />
       </Link>
     </div>

@@ -6,15 +6,18 @@ import Search from "../components/search";
 import { selectGoods, getGoodsAsync } from "../slice/goodsSlice";
 
 export default function Dashboard() {
-  const [text, setText] = useState("");
+  const [keyword, setKeyword] = useState("");
   const goods = useSelector(selectGoods);
   const disptch = useDispatch();
+
   useEffect(() => {
-    disptch(getGoodsAsync()).then(() => {});
+    disptch(getGoodsAsync());
   }, []);
-  const handleFilter = (kword) => {
-    setText(kword);
+
+  const handleFilter = (keyword) => {
+    setKeyword(keyword);
   };
+
   return (
     <div>
       <Header />
@@ -28,7 +31,7 @@ export default function Dashboard() {
         <div className="goods mt-10 grid grid-cols-4 gap-6">
           {goods &&
             goods.map((item, i) =>
-              text === "" ? (
+              keyword === "" ? (
                 <Good
                   key={i}
                   id={item.id}
@@ -36,13 +39,8 @@ export default function Dashboard() {
                   price={item.price}
                 />
               ) : (
-                item.name === text && (
-                  <Good
-                    key={i}
-                    id={item.id}
-                    name={item.name}
-                    price={item.price}
-                  />
+                item.name === keyword && (
+                  <Good key={`good-item-${item.id}`} {...item} />
                 )
               )
             )}

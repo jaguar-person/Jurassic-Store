@@ -1,12 +1,12 @@
-import CartGoods from "./cart_goods";
 import { Link, useNavigate } from "react-router-dom";
+import CartGoods from "./cart_goods";
 
 export default function CartModal() {
   const navigate = useNavigate();
   return (
     <>
       <div className="fixed left-0 top-0 bg-black opacity-50 z-10 w-full h-full"></div>
-      <div className="fixed top-0 right-1 bg-white z-20 h-full w-[30%] block overflow-scroll p-3">
+      <div className="fixed top-0 right-1 bg-white z-20 h-full w-[30%] block p-3">
         <div className="text-center">
           <div className="relative header m-5 font-bold text-2xl text-green-600">
             Cart

@@ -1,13 +1,24 @@
-# Jurssic Store - Responsible, Reliable, Flexible E-Store 
-
+# Jurssic Store - Responsible, Reliable, Flexible E-Store
 
 This is E-Store Web Site template using React and Stripe API.
- 
 
- ## Running Commands
+## Running Commands
 
-  npm run db:server => run json server --- PORT = 5000 ;
+### To run JSON server
 
-  npm run stripe:server => run stripe node server --- PORT = 8080 ;
+```
+npm i -g json-server
+npm run server
+```
 
-  npm start => run project --- PORT = 3000 ;
+### To run Stripe server
+
+```
+npm run stripe:server
+```
+
+### To run frontend
+
+```
+npm start
+```

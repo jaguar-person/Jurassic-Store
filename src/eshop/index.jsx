@@ -8,10 +8,10 @@ export default function EShop() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Dashboard />}></Route>
-        <Route path='/carts' element={<Carts />}></Route>
-        <Route path='/checkout' element={<Checkout />}></Route>
-        <Route path='/pay' element={<StripeContainer />}></Route>
+        <Route path="/" element={<Dashboard />}></Route>
+        <Route path="/carts" element={<Carts />}></Route>
+        <Route path="/checkout" element={<Checkout />}></Route>
+        <Route path="/pay" element={<StripeContainer />}></Route>
       </Routes>
     </BrowserRouter>
   );

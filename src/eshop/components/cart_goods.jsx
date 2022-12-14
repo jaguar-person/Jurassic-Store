@@ -15,7 +15,7 @@ export default function CartGoods() {
   }
   total = total.toFixed(2);
   return (
-    <div className="overflow-scroll">
+    <div className="overflow-y-auto h-[90%]">
       <div className="main">
         <div className="grid gap-3 grid-rows-1">
           {carts &&

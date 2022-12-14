@@ -4,9 +4,12 @@ import axios from "axios";
 const initialState = {
   goods: [],
 };
+
+const SERVER_URL = "http://localhost:5000";
+
 export const getGoodsAsync = createAsyncThunk("goods/get", async () =>
   axios
-    .get("http://localhost:5000/goods")
+    .get(`${SERVER_URL}/goods`)
     .then((res) => res.data)
     .catch((err) => {
       throw err.data;

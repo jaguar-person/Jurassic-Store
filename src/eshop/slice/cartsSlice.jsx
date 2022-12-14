@@ -4,30 +4,36 @@ import axios from "axios";
 const initialState = {
   carts: [],
 };
+
+const SERVER_URL = "http://localhost:5000";
+
 export const getCartsAsync = createAsyncThunk("carts/get", async () =>
   axios
-    .get("http://localhost:5000/carts")
+    .get(`${SERVER_URL}/carts`)
     .then((res) => res.data)
     .catch((err) => {
       throw err.data;
     })
 );
+
 export const addCartsAsync = createAsyncThunk("carts/add", async (data) =>
   axios
-    .post("http://localhost:5000/carts", data)
+    .post(`${SERVER_URL}/carts`, data)
     .then((res) => res.data)
     .catch((err) => {
       throw err.data;
     })
 );
+
 export const removeCartsAsync = createAsyncThunk("carts/remove", async (data) =>
   axios
-    .delete(`http://localhost:5000/carts/${data}`)
+    .delete(`${SERVER_URL}/carts/${data}`)
     .then((res) => data)
     .catch((err) => {
       throw err.data;
     })
 );
+
 export const cartsSlice = createSlice({
   name: "carts",
   initialState,

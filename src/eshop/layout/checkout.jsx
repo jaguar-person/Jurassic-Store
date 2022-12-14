@@ -2,15 +2,23 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { selectCarts } from "../slice/cartsSlice";
 import CartGoods from "../components/cart_goods";
+import { useEffect, useState } from "react";
 
 export default function Checkout() {
   const navigate = useNavigate();
   const carts = useSelector(selectCarts);
 
-  let total = Number(0);
-  for (var item of carts) {
-    total += Number(item.price);
-  }
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    let totalPrice = 0;
+    for (let item of carts) {
+      totalPrice += Number(item.price);
+    }
+
+    setTotal(totalPrice);
+  }, [carts]);
+
   return (
     <div className="border border-slate-700 rounded-lg mx-32 mt-32 h-full">
       <div className="text-2xl font-bold text-center p-3 m-3 text-red-400">
