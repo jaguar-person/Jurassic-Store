@@ -1,9 +1,11 @@
 import { useDispatch } from "react-redux";
 import { addCartsAsync } from "../slice/cartsSlice";
+import { toast } from "react-toastify";
 
 export default function Good(props) {
   const dispatch = useDispatch();
   const handleGood = (id, name, price) => () => {
+    toast("the item moved to carts", { type: "success" });
     dispatch(
       addCartsAsync({
         id: id,
@@ -15,7 +17,7 @@ export default function Good(props) {
   return (
     <div>
       <div className="flex justify-center">
-        <img className="good_avatar w-[80%]" src="./assets/good.jpg" />
+        <img className="good_avatar w-[80%]" src="./assets/good.jpg" alt="Good"/>
       </div>
       <div className="m-2 p-2 rounded-md bg-slate-700 text-white">
         <h4 className=" m-1 font-medium text-lg text-center">{props.name}</h4>

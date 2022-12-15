@@ -28,7 +28,7 @@ export const addCartsAsync = createAsyncThunk("carts/add", async (data) =>
 export const removeCartsAsync = createAsyncThunk("carts/remove", async (data) =>
   axios
     .delete(`${SERVER_URL}/carts/${data}`)
-    .then((res) => data)
+    .then(() => data)
     .catch((err) => {
       throw err.data;
     })
@@ -46,7 +46,6 @@ export const cartsSlice = createSlice({
       .addCase(addCartsAsync.fulfilled, (state, action) => {
         state.carts = state.carts.concat(action.payload);
       })
-      .addCase(addCartsAsync.rejected, (state, action) => {})
       .addCase(removeCartsAsync.fulfilled, (state, action) => {
         state.carts = state.carts.filter((item) => item.id !== action.payload);
       });

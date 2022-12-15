@@ -1,15 +1,17 @@
 import { useDispatch } from "react-redux";
 import { removeCartsAsync } from "../slice/cartsSlice";
+import {toast} from 'react-toastify'
 
 export default function CartGood(props) {
   const dispatch = useDispatch();
   const handleRemove = (id) => () => {
+    toast('The item removed from carts',{ type: "success" });
     dispatch(removeCartsAsync(id));
   };
   return (
     <div className="grid lg:grid-col-3  sm:grid-col-1">
       <div className="lg:col-start-1 flex lg:justify-start sm:justify-center ">
-        <img className="good_avatar w-20" src="./assets/good.jpg" />
+        <img className="good_avatar w-20" src="./assets/good.jpg" alt="Good"/>
       </div>
       <div className="lg:col-end-3 rounded-md bg-slate-700 text-white">
         <h4 className=" m-1 font-medium text-lg">{props.name}</h4>

@@ -4,7 +4,7 @@ export default function Search(props) {
   const [filter, setFilter] = useState("");
 
   const handleFilter = (e) => {
-    if (e.key == "Enter") {
+    if (e.key === "Enter") {
       props.handleFilter(filter);
     }
   };
@@ -18,10 +18,10 @@ export default function Search(props) {
         onChange={(e) => setFilter(e.target.value)}
         onKeyDown={handleFilter}
       />
-      <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+      <div className="absolute inset-y-0 right-0 flex items-center pr-8 pointer-events-none">
         <svg
           aria-hidden="true"
-          className="w-5 h-5 text-gray-500 dark:text-gray-400"
+          className="w-5 h-5 text-gray-500 dark:text-gray-400 cursor-pointer"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

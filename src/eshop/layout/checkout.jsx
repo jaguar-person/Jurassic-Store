@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { selectCarts } from "../slice/cartsSlice";
-import CartGoods from "../components/cart_goods";
 import { useEffect, useState } from "react";
+import { selectCarts } from "../slice/cartsSlice";
+import CartGoods from "../components/CartGoods";
 
 export default function Checkout() {
   const navigate = useNavigate();

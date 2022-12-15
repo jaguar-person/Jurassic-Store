@@ -1,5 +1,5 @@
-import Dashboard from "./dashboard";
-import CartModal from "../components/cartModal";
+import Dashboard from "./Dashboard";
+import CartModal from "../components/CartModal";
 
 export default function Carts() {
   return (

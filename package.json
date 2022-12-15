@@ -15,6 +15,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.1.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -24,12 +25,6 @@
     "eject": "react-scripts eject",
     "server": "json-server --watch server/db.json",
     "stripe:server": "node stripe-server/index.js"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [

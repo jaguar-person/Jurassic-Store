@@ -2,38 +2,44 @@ import React from "react";
 import axios from "axios";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const location = useLocation();
+  const navigate = useNavigate();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardElement),
     });
+
     if (!error) {
-      console.log("Stripe 23 | token generated!", paymentMethod);
+      toast("token generated!",{type:"true"});
       try {
         const { id } = paymentMethod;
         const response = await axios.post(
           "http://localhost:8080/stripe/charge",
           {
             amount: location.state.total,
-            id: id,
+            id: id
           }
         );
-        console.log("Stripe 35 | data", response.data.success);
         if (response.data.success) {
-          console.log("CheckoutForm.js 25 | payment successful!");
+          console.log(response)
+          toast(`payment successful! $${location.state.total}`,{type:"true"});
         }
       } catch (error) {
-        console.log("CheckoutForm.js 28 | ", error);
+        toast(`payment error! $${error}`,{type:"false"});
       }
     } else {
-      console.log(error.message);
+      toast(`${error.message}`,{type:"false"});
     }
+    navigate('/',{replace:true})
   };
   return (
     <form

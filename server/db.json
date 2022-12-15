@@ -3,44 +3,39 @@
     {
       "id": 1,
       "name": "Shoes",
-      "price": "50.2"
+      "price": "502"
     },
     {
       "id": 2,
       "name": "Shirt",
-      "price": "30.1"
+      "price": "301"
     },
     {
       "id": 3,
       "name": "Hat",
-      "price": "10.2"
+      "price": "302"
     },
     {
       "id": 4,
       "name": "Chocolate",
-      "price": "16.7"
+      "price": "367"
     }
   ],
   "carts": [
     {
       "id": 1,
       "name": "Shoes",
-      "price": "50.2"
+      "price": "502"
     },
     {
       "id": 2,
       "name": "Shirt",
-      "price": "30.1"
+      "price": "301"
     },
     {
       "id": 3,
       "name": "Hat",
-      "price": "10.2"
-    },
-    {
-      "id": 4,
-      "name": "Chocolate",
-      "price": "16.7"
+      "price": "302"
     }
   ]
 }

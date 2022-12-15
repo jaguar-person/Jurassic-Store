@@ -1,19 +1,19 @@
+ /* eslint-disable */ 
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectCarts, getCartsAsync } from "../slice/cartsSlice";
-import CartGood from "./cart_good";
+import CartGood from "./CartItem";
 
 export default function CartGoods() {
   const carts = useSelector(selectCarts);
   const disptch = useDispatch();
-  var total = Number(0.0);
+  var total = 0;
   useEffect(() => {
     disptch(getCartsAsync());
   }, []);
   for (var item of carts) {
     total += Number(item.price);
   }
-  total = total.toFixed(2);
   return (
     <div className="overflow-y-auto h-[90%]">
       <div className="main">

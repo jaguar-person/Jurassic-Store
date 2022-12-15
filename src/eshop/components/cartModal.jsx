@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import CartGoods from "./cart_goods";
+import CartGoods from "./CartGoods";
 
 export default function CartModal() {
   const navigate = useNavigate();
@@ -14,6 +14,7 @@ export default function CartModal() {
               src="./assets/exit.png"
               className="w-10 h-10 absolute top-0 right-0 cursor-pointer"
               onClick={() => navigate("/", true)}
+              alt="Exit"
             />
           </div>
           <CartGoods />
